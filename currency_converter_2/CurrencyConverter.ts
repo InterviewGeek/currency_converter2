@@ -37,6 +37,9 @@ function populateExchangeMap(result: string) {
         var params = lines[i].split("|");
         var p4 = parseFloat(params[4]);
         var p2 = parseFloat(params[2]);
+        if(isNaN(p4) || isNaN(p2)) {
+            console.log("Got invalid values for currency: ", Currency[params[3]], ", p4: ", p4, ", p2: ", p2);  // log this error for tracking
+        }
         exchangeMap.set(Currency[params[3]], p4/p2);
     }
 }

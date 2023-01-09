@@ -1,7 +1,6 @@
 export enum Currency {
-    CZK = "CZK",
     AUD = "AUD",
-    BRL =" BRL",
+    BRL = "BRL",
     BGN = "BGN",
     CAD = "CAD",
     CNY = "CNY",
@@ -34,7 +33,6 @@ export enum Currency {
 }
 
 export let dropDownValues =[
-    {label: 'CZK', value: Currency.CZK},
     {label: 'AUD', value: Currency.AUD},
     {label: 'BRL', value: Currency.BRL},
     {label: 'BGN', value: Currency.BGN},
