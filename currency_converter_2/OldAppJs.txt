@@ -1,0 +1,53 @@
+export default function App() {
+  const [text, setText] = useState('');
+
+  const [items, setItems] = useState([
+    {label: 'USD', value: Currency.USD},
+    {label: 'IDR', value: Currency.IDR},
+  ]);
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState(value);
+  const [responseText, setResponseText] = useState('');
+  return (
+    <View style={styles.container}>
+      <StatusBar barStyle='light-content' />
+    <Text style={styles.titleText}>
+      {"Currency Converter"}
+    </Text>
+    <View style={{padding: 22, borderRadius: 15, backgroundColor: "white", width: 300, marginBottom: 10}}>
+      <TextInput
+            placeholder="Enter amount here in CZK"
+            onChangeText={newText => setText(newText)}
+            keyboardType="numeric"
+            defaultValue={text}
+          />
+    </View>
+    <View style={{padding: 15, borderRadius: 15, backgroundColor: "white", width: 300, marginBottom: 10}}>
+      <DropDownPicker
+        open={open}
+        placeholder='Select currencdy'
+        value={value}
+        items={items}
+        setOpen={setOpen}
+        setValue={setValue}
+        setItems={setItems}
+        containerStyle={{height: 40}}
+        onChangeValue={newVal => setValue(newVal)}
+        onChangeText={item => console.log(item.label, item.value)}
+      />
+    </View>
+      <Button
+        onPress={() => handleClick(text, value)}
+        title="Submit"
+        color="#841584"
+        accessibilityLabel="Click to get the converted amount"
+        alignItems="right"
+        marginBottom="100"
+      />
+      <View>
+        <Text style={{fontSize: 20}}>
+          {responseText}
+        </Text>
+      </View>
+    </View>
+  );};
